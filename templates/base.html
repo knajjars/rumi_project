@@ -14,25 +14,27 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Lightbox -->
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
-    <title>Rumi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <title>Rumi {% block title %}{% endblock %}</title>
 </head>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <body>
+<!-- Topbar -->
+{% include 'partials/_topbar.html' %}
+<!-- Navbar -->
+{% include 'partials/_navbar.html' %}
+<!-- Main Content -->
+{% block content %}{% endblock %}
+<!-- Footer -->
+{% include 'partials/_footer.html' %}
+<!-- Alerts -->
+{% include 'partials/_alerts.html' %}
 
-    <!-- Topbar -->
-    {% include 'partials/_topbar.html' %}
-    <!-- Navbar -->
-    {% include 'partials/_navbar.html' %}
-    <!-- Main Content -->
-    {% block content %}{% endblock  %}
-    <!-- Footer -->
-    {% include 'partials/_footer.html' %}
-
-
-    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/lightbox.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/lightbox.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
